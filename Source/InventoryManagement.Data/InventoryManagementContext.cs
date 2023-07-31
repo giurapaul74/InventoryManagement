@@ -10,6 +10,11 @@ namespace InventoryManagement.Data
 {
     public class InventoryManagementContext : DbContext
     {
+        public InventoryManagementContext(DbContextOptions<InventoryManagementContext> options) : base(options)
+        {
+            
+        }
+
         public DbSet<Item> Items { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
