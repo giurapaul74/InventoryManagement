@@ -49,7 +49,7 @@ namespace InventoryManagement.Controllers
         }
 
         // GET: Items/Create
-        [HttpGet]
+        [HttpGet("create")]
         public IActionResult Create()
         {
             return View();
@@ -58,7 +58,7 @@ namespace InventoryManagement.Controllers
         // POST: Items/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost("create")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,Description,Quantity,PurchasePrice,SellingPrice")] Item item)
         {
@@ -72,6 +72,7 @@ namespace InventoryManagement.Controllers
         }
 
         // GET: Items/Edit/5
+        [HttpGet("edit")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Items == null)
@@ -90,7 +91,7 @@ namespace InventoryManagement.Controllers
         // POST: Items/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost("edit")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,Quantity,PurchasePrice,SellingPrice")] Item item)
         {
@@ -123,6 +124,7 @@ namespace InventoryManagement.Controllers
         }
 
         // GET: Items/Delete/5
+        [HttpGet("delete")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Items == null)
@@ -141,7 +143,7 @@ namespace InventoryManagement.Controllers
         }
 
         // POST: Items/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("DeleteConfirmed")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
