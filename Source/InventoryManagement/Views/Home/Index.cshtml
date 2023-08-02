@@ -3,27 +3,6 @@
 }
 
 <div class="text-center">
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Quantity</th>
-                <th>Purchase Price</th>
-                <th>Selling Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.Name</td>
-                    <td>@item.Description</td>
-                    <td>@item.Quantity</td>
-                    <td>@item.PurchasePrice.ToString("C")</td>
-                    <td>@item.SellingPrice.ToString("C")</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
